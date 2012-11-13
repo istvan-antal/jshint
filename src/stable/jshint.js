@@ -879,7 +879,7 @@ loop:
 	function nobreak(left, right) {
 		left = left || state.tokens.curr;
 		right = right || state.tokens.next;
-		if (state.option.white && (left.character !== right.from || left.line !== right.line)) {
+		if (state.option.white && left.value !== '.' && (left.character !== right.from || left.line !== right.line)) {
 			warning("W012", right, right.value);
 		}
 	}
